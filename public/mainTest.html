@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Basis Template for Bootstrap 3</title>
+    <meta name="generator" content="Bootply"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=8"/>
+    <meta name="fragment" content="!">
+    <meta name="author" content="Austin Anderson">
+    <meta name="contact" content="austin@rarebreedstudios.com">
+    <meta name="keywords"
+          content="angularjs,angular.js,texteditor,text editor,Wysiwyg,javascript text editor,javascript Wysiwyg">
+    <meta name="copyright" content="Austin Anderson. All rights reserved">
+
+    <link href="./dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./dist/css/base.min.css" rel="stylesheet">
+    <link href="./dist/css/project.min.css" rel="stylesheet">
+
+
+    <!--[if lt IE 9]>
+    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link href="dist/css/styles.css" rel="stylesheet">
+
+    <!--textAngular-->
+    <link rel="shortcut icon" href="images/favicon.png">
+    <link rel="author" href="http://www.twitter.com/codeandwaffles">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,300">
+    <link rel="stylesheet" href="http://textangular.com/css/style.css" type="text/css">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.min.js" type="text/javascript"></script>
+
+    <script src="./javascripts/scripts.js"></script>
+
+    <link rel="stylesheet" href="dist/js/textAngular.css"/>
+    <script src='./dist/js/textAngular-rangy.min.js'></script>
+    <script src='./dist/js/textAngular-sanitize.min.js'></script>
+    <script src='./dist/js/textAngular.min.js'></script>
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js" type="text/javascript"></script>
+    <script src="http://resources.infolinks.com/js/infolinks_main.js" type="text/javascript"></script>
+
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="box">
+
+        <div class="row" ng-app='memoend' ng-controller='initLoadCtrl'>
+            <!-- sidebar -->
+            <div class="column col-sm-2" id="sidebar" style="background-color: #dca7a7">
+                <img class="logo" src="assets/img/logo.png"/>
+                <ul class="nav" ng-init="mTitleLoad()">
+                    <li class="active" ng-repeat="title in titles"><a href="#">{{title}}</a></li>
+                </ul>
+
+            </div>
+
+
+
+            <!-- /sidebar -->
+
+            <!-- sidebar -->
+            <div class="column col-sm-2" id="sidebar2"
+                 style="background-color: #e7c3c3; padding-left: 0px;padding-right: 0px;">
+                <li style="color: #ffffff; text-align: right; width: auto;list-style:none; padding: 5px 5px 0 0"
+                    ng-click=""> + 메모 추가 </t> </li>
+                <ul class="nav">
+                    <li class="active" ng-repeat="midTitle in midTitles"><a href="#" ng-click='mDataLoad(midTitle)'><b>{{midTitle.MEMO_NAME}}</b></br>
+                        {{midTitle.TIMESTAMP | date:'yyyy. MM. dd'}}&nbsp;({{midTitle.VIEW_COUNT}})</a></li>
+                </ul>
+
+            </div>
+            <!-- /sidebar -->
+
+
+            <!--view_mode main -->
+            <div class="column col-sm-8" id="main" style="align-content: center" ng-hide="!editor-hide">
+
+
+                <div id="ng-app" class="ng-scope">
+
+                    <div class="lighter">
+
+                        </br>
+                        <div style="text-align: center;color: #95a5a6;">{{writeDate | date:'yyyy년 M월 dd일 a h시 mm분
+                            ss초'}}
+                        </div>
+                        <div ta-bind text-angular="" ng-model="htmlContent" name="demo-editor"
+                             ta-text-editor-class="border-around" ta-html-editor-class="border-around"
+                             class="ng-pristine ng-untouched ng-valid ng-isolate-scope ta-root focussed"></div>
+                    </div>
+                    <br>
+                    <div class="text-center lighter border-around">
+
+                    </div>
+
+                    <br>
+                </div>
+                <!-- /padding -->
+            </div>
+            <!-- /main -->
+
+
+            <!--editor_mode main -->
+            <div class="column col-sm-8" id="main-editor" style="align-content: center" ng-hide="editor_hide">
+                <div id="ng-app-editor" class="ng-scope">
+
+                    <div class="lighter">
+
+                        </br>
+
+                        <div text-angular="" ng-model="htmlContent" name="demo2-editor"
+                             ta-text-editor-class="border-around" ta-html-editor-class="border-around"
+                             class="ng-pristine ng-untouched ng-valid ng-isolate-scope ta-root focussed"></div>
+                    </div>
+                    <br>
+                    <div class="text-center lighter border-around">
+
+                    </div>
+
+                    <br>
+                </div>
+                <!-- /padding -->
+            </div>
+            <!-- /main -->
+        </div>
+    </div>
+</div>
+
+
+<!-- script references -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+<!-- js -->
+<script src="./dist/js/base.min.js"></script>
+<!-- js for doc -->
+<script src="./dist/js/project.min.js"></script>
+
+
+</body>
+</html>
